@@ -1,21 +1,26 @@
 import 'package:appo/pages/mplayer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
   runApp(
     ProviderScope(
-      child: MyApp(),
+      child: Appo(),
     ),
   );
 }
 
-class MyApp extends StatelessWidget {
+class Appo extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]);
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Appo',
       theme: ThemeData(
         // This is the theme of your application.
         //
